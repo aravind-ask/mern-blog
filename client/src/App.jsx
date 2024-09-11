@@ -14,6 +14,7 @@ import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
+import LoginProtected from "./components/LoginProtected";
 
 export default function App() {
   return (
@@ -23,16 +24,32 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
+        <Route
+          path="/sign-in"
+          element={
+            <LoginProtected>
+              <SignIn />
+            </LoginProtected>
+          }
+        />
+        <Route
+          path="/sign-up"
+          element={
+            <LoginProtected>
+              <SignUp />
+            </LoginProtected>
+          }
+        />
+        {/* <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} /> */}
         <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-        <Route element={<OnlyAdminPrivateRoute />}>
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/update-post/:postId" element={<UpdatePost />} />
-        </Route>
+        {/* <Route element={<OnlyAdminPrivateRoute />}> */}
+        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/update-post/:postId" element={<UpdatePost />} />
+        {/* </Route> */}
 
         <Route path="/projects" element={<Projects />} />
         <Route path="/post/:postSlug" element={<PostPage />} />

@@ -73,7 +73,18 @@ export default function DashSidebar() {
                 icon={HiDocumentText}
                 as='div'
               >
-                Posts
+                All Posts
+              </Sidebar.Item>
+            </Link>
+          )}
+          {!currentUser.isAdmin && (
+            <Link to='/dashboard?tab=posts'>
+              <Sidebar.Item
+                active={tab === 'posts'}
+                icon={HiDocumentText}
+                as='div'
+              >
+                My Posts
               </Sidebar.Item>
             </Link>
           )}
