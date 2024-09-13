@@ -21,8 +21,12 @@ export default function Home() {
           Welcome to{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
             AuraBlogs
+          </span><br/>
+          <span className="text-xs sm:text-sm text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            Capturing the essence of every story.
           </span>
         </h1>
+
         <p className="text-gray-500 text-xs sm:text-sm">
           Here you'll find a variety of articles and tutorials on topics such as
           web development, software engineering, and programming languages.
